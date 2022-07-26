@@ -1,3 +1,5 @@
+// function to check if output matches expected outcome.
+
 const failEmoji = String.fromCodePoint(0x1F534, 0x1F534, 0x1F534);
 const passEmoji = String.fromCodePoint(0x1F7E2, 0x1F7E2, 0x1F7E2);
 

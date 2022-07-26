@@ -9,6 +9,8 @@ const assertEqual = function(actual, expected) {
   }
 };
 
+//------------ code above is a check for expected outcome --------------//
+
 const head = function(array) {
   switch (array) {
   case undefined:
