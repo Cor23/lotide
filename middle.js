@@ -29,8 +29,36 @@ const assertArraysEqual = function(inputOne, inputTwo) {
 
 //For arrays with an even number of elements, an array containing the two elements in the middle should be returned
 
-const middle = function() {
-
+const middle = function(array) {
+  if(array.length <= 2) {
+    return [];
+  }
+  if(array.length === 3) {
+    let indexOfMiddle = Math.floor(array.length / 2)
+    return [array[indexOfMiddle]]
+  }
+  if(array.length >= 4 && array.length % 2 === 0) { //EVEN
+    let output = [];
+    let indexOfMiddle = Math.floor(array.length / 2)
+    output.push(array[indexOfMiddle] - 1)
+    output.push(array[indexOfMiddle])
+    return output
+  }
+  if(array.length >= 4 && array.length % 2 !== 0) { //ODD
+    let indexOfMiddle = Math.floor(array.length / 2)
+    return [array[indexOfMiddle]]
+  }
+  
 }
 
-middle([1, 2, 3, 4, 5]) // => [3]
+assertArraysEqual(middle([]), []);
+assertArraysEqual(middle([1]), []);
+assertArraysEqual(middle([1, 2]), []);
+assertArraysEqual(middle([1, 2, 3]), [2]);
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7]), [4]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8]), [4, 5]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8, 9]), [5]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [5, 6]);
