@@ -10,16 +10,17 @@ const eqArrays = function(inputOne, inputTwo) {
   return true;
 };
 
+
 const assertArraysEqual = function(inputOne, inputTwo) {
-  if(eqArrays(inputOne, inputTwo) === false) {
+  if(!eqArrays(inputOne, inputTwo)) {
     console.log(`${failEmoji} Assertion Failed: ${inputOne} !== ${inputTwo}`)
-  } else if(eqArrays(inputOne, inputTwo) === true) {
+  } else if(eqArrays(inputOne, inputTwo)) {
     console.log(`${passEmoji} Assertion Passed: ${inputOne} === ${inputTwo}`)
   }
 };
 
-// console.log(eqArrays([1, 2, 3], [1, 2, 3]), false)
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 2]), true)
+// console.log(eqArrays([1, 2, 3], [1, 2, 3]), true)
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
 
 // Implement assertArraysEqual 
 // will take in two arrays
