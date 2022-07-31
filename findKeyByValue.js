@@ -26,6 +26,8 @@ const findKeyByValue = function(object, value) {
   for (let genre in object) {
     if (object[genre] === value) {
       return genre;
+    } else {
+      return undefined;
     }
   }
 };
