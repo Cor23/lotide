@@ -1,28 +1,9 @@
-const failEmoji = String.fromCodePoint(0x1F534, 0x1F534, 0x1F534);
-const passEmoji = String.fromCodePoint(0x1F7E2, 0x1F7E2, 0x1F7E2);
-
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`${passEmoji} Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`${failEmoji} Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-//--------------------------------------------------------//
-const eqArrays = function(inputOne, inputTwo) {
-  for (let i = 0; i < inputOne.length; i++) {
-    if (inputOne[i] !== inputTwo[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-//--------------------------------------------------------//
+const eqArrays = require('./eqArrays');
 
 // two objects are equal when:
 // They have the same number of keys
 // Compare length of both arrays return false if not equal
-//The value for each key in one object is the same as the value for that same key in the other object
+// The value for each key in one object is the same as the value for that same key in the other object
 
 const eqObjects = function(object1, object2) {        //input cd and dc into
   const objectOneKeysArray = Object.keys(object1);    //["c", "d"]
@@ -46,20 +27,4 @@ const eqObjects = function(object1, object2) {        //input cd and dc into
 
 };
 
-const ab = {a: '1', b: '2'};
-const ba = {b: '2', a: '1'};
-const abc = {a: "1", b: "2", c: "3"};
-
-// assertEqual(eqObjects(ab, ba), true);
-// assertEqual(eqObjects(ab, abc), false);
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-
-eqObjects(cd, dc);
-assertEqual(eqObjects(cd, dc), true);
-
-const cd2 = { c: "1", d: ["2", 3] };
-
-assertEqual(eqObjects(cd, cd2), true);
-
+module.exports = eqObjects;
