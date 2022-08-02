@@ -1,0 +1,29 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "library of simple functions",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cor23/lotide.git"
+  },
+  "keywords": [
+    "lotide"
+  ],
+  "author": "Corey Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cor23/lotide/issues"
+  },
+  "homepage": "https://github.com/Cor23/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2"
+  }
+}
